@@ -1,0 +1,46 @@
+// Theme palette
+$light_green: #40D29D;
+$light_blue: #5DADE2 ;
+$light_yellow: #F7DC6F;
+$bluegrey_dark: #1C2833;
+$bluegrey_medium: #2C3E50;
+$bluegrey_light: #D6DBDF;
+$bluegrey_lightest: #EAECEE;
+
+// Seed colors
+$base_red: #641E16;
+
+$color-names-map: (
+    "light-green": $light_green,
+    "light-blue": $light_blue,
+    "light-yellow": $light_yellow,
+    "bluegray-dark": $bluegrey_dark,
+    "bluegrey-medium": $bluegrey_medium,
+    "bluegrey-light": $bluegrey_light,
+    "bluegrey-lightest": $bluegrey_lightest
+);
+
+@each $color-name, $color-value in $color-names-map {
+    .fe-#{$color-name}-bg {
+        background-color: $color-value;
+    }
+}
+
+@each $color-name, $color-value in $color-names-map {
+    .fe-#{$color-name}-text {
+        color: $color-value;
+    }
+}
+
+@for $step from 0 to 10 {
+    .fe-red-0#{$step} {
+        background-color: lighten($base_red, $step * 8%);
+    }
+}
+
+// rgb(247, 220, 111)
+// rgb(214, 219, 223)
+// rgb(93, 173, 226)
+// rgb(234, 236, 238)
+// rgb(28, 40, 51)
+// rgb(64, 210, 157)

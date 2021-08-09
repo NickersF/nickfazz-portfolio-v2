@@ -2,7 +2,6 @@ var path = require('path');
 
 module.exports = {
     context: path.resolve(__dirname, './src/ts'),
-    watch: true,
     mode: 'development',
     entry: {
         main: './main.ts'

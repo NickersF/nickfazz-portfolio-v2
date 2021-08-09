@@ -1,1 +1,3 @@
-console.log("Hello World!");
+import { styleGuideSetup } from "./styleguide";
+
+styleGuideSetup();
