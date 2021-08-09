@@ -1,5 +1,12 @@
+/* 
+Style guide code rules
+********************************************
+Author: Nicholas Fazzolari 
+*/
+
 @use "../base/colors";
 @use "../base/type";
+@use "../base/border";
 
 html, body {
     background-color: colors.$bluegrey_lightest;

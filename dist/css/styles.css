@@ -1,5 +1,15 @@
+/* 
+Typography mixins and definitions
+********************************************
+Author: Nicholas Fazzolari 
+*/
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap");
+/* 
+Color mixins and definitions
+********************************************
+Author: Nicholas Fazzolari 
+*/
 .fe-light-green-bg {
   background-color: #40D29D;
 }
@@ -129,27 +139,72 @@
   font-weight: 900;
 }
 
-.elment-margin-main-top {
+/* 
+Spacing mixins and definitions
+********************************************
+Author: Nicholas Fazzolari 
+*/
+.nf-margin-main-top {
   margin-left: 0;
   margin-top: 4rem;
   margin-right: 0;
   margin-bottom: 0;
 }
 
-.elment-margin-section-heading {
+.nf-margin-section-heading {
   margin-left: 0;
   margin-top: 4rem;
   margin-right: 0;
   margin-bottom: 2rem;
 }
 
-.elment-padding-main-left {
+.nf-padding-main-left {
   padding-left: 8rem;
   padding-top: 0;
   padding-right: 0;
   padding-bottom: 0;
 }
 
+/* 
+Border mixins and definitions
+********************************************
+Author: Nicholas Fazzolari 
+*/
+.nf-border-default-1px {
+  border: 1px solid #2C3E50;
+  border-radius: 0;
+}
+
+.nf-border-left-1px {
+  border-left: 1px solid #2C3E50;
+  border-radius: 0;
+}
+
+.nf-border-top-1px {
+  border-top: 1px solid #2C3E50;
+  border-radius: 0;
+}
+
+.nf-border-right-1px {
+  border-right: 1px solid #2C3E50;
+  border-radius: 0;
+}
+
+.nf-border-bottom-1px {
+  border-bottom: 1px solid #2C3E50;
+  border-radius: 0;
+}
+
+.nf-border-bottom-8px {
+  border-bottom: 8px solid #D6DBDF;
+  border-radius: 0;
+}
+
+/* 
+Style guide code rules
+********************************************
+Author: Nicholas Fazzolari 
+*/
 html, body {
   background-color: #EAECEE;
   color: #2C3E50;
@@ -165,5 +220,11 @@ html, body {
   width: 64px;
   height: 64px;
 }
+
+/* 
+Global SASS source imports
+********************************************
+Author: Nicholas Fazzolari 
+*/
 
 /*# sourceMappingURL=styles.css.map */

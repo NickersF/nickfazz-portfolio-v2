@@ -1,4 +1,10 @@
-import { generateStepNames, buildBackgroundColorElements } from "./color_gen";
+/* 
+Main styleguide entry point
+********************************************
+Author: Nicholas Fazzolari 
+*/
+
+import { buildBackgroundColorElements } from "./color_gen";
 
 const siteColorPalette = [
     "light-green",

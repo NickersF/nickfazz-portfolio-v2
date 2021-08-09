@@ -1,5 +1,11 @@
+/* 
+Spacing mixins and definitions
+********************************************
+Author: Nicholas Fazzolari 
+*/
+
 @mixin set-margins($name, $left : 0, $top: 0, $right: 0, $bottom: 0) {
-    .elment-margin-#{$name} {
+    .nf-margin-#{$name} {
         margin-left: $left;
         margin-top: $top;
         margin-right: $right;
@@ -8,7 +14,7 @@
 }
 
 @mixin set-paddings($name, $left : 0, $top: 0, $right: 0, $bottom: 0) {
-    .elment-padding-#{$name} {
+    .nf-padding-#{$name} {
         padding-left: $left;
         padding-top: $top;
         padding-right: $right;

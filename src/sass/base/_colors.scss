@@ -1,3 +1,9 @@
+/* 
+Color mixins and definitions
+********************************************
+Author: Nicholas Fazzolari 
+*/
+
 // Theme palette
 $light_green: #40D29D;
 $light_blue: #5DADE2 ;
@@ -6,9 +12,6 @@ $bluegrey_dark: #1C2833;
 $bluegrey_medium: #2C3E50;
 $bluegrey_light: #D6DBDF;
 $bluegrey_lightest: #EAECEE;
-
-// Seed colors
-$base_red: #641E16;
 
 $color-names-map: (
     "light-green": $light_green,
@@ -32,12 +35,17 @@ $color-names-map: (
     }
 }
 
+// Experimental feature for creating color palettes
+// Seed colors
+$base_red: #641E16;
+
 @for $step from 0 to 10 {
     .fe-red-0#{$step} {
         background-color: lighten($base_red, $step * 8%);
     }
 }
 
+// RGB versions of color palette
 // rgb(247, 220, 111)
 // rgb(214, 219, 223)
 // rgb(93, 173, 226)

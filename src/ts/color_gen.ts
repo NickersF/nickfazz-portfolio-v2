@@ -1,3 +1,9 @@
+/* 
+Color element generator for style guide
+********************************************
+Author: Nicholas Fazzolari 
+*/
+
 export function generateStepNames(colorNamesArray: Array<string>, numOfSteps: number, baseColor: string) {
 
     if (numOfSteps < 0 || numOfSteps > 10) {

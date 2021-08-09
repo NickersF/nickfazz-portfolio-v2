@@ -1,0 +1,56 @@
+/* 
+Border mixins and definitions
+********************************************
+Author: Nicholas Fazzolari 
+*/
+
+@use "../base/colors";
+
+@mixin set-borders($name, $width : 0, $style: "solid", $color: "#000000", $radius: 0) {
+
+    @if $name == "default" {
+        .nf-border-#{$name}-#{$width} {
+            border: $width $style $color;
+            border-radius: $radius;
+        }
+    }
+
+    @if $name == "left" {
+        .nf-border-#{$name}-#{$width} {
+            border-#{$name}: $width $style $color;
+            border-radius: $radius;
+        }
+    }
+
+    @if $name == "top" {
+        .nf-border-#{$name}-#{$width} {
+            border-#{$name}: $width $style $color;
+            border-radius: $radius;
+        }
+    }
+
+    @if $name == "right" {
+        .nf-border-#{$name}-#{$width} {
+            border-#{$name}: $width $style $color;
+            border-radius: $radius;
+        }
+    }
+
+    @if $name == "bottom" {
+        .nf-border-#{$name}-#{$width} {
+            border-#{$name}: $width $style $color;
+            border-radius: $radius;
+        }
+    }
+    
+}
+
+// 1px Variants
+@include set-borders("default", 1px , solid , colors.$bluegrey_medium, 0);
+@include set-borders("left", 1px , solid , colors.$bluegrey_medium, 0);
+@include set-borders("top", 1px , solid , colors.$bluegrey_medium, 0);
+@include set-borders("right", 1px , solid , colors.$bluegrey_medium, 0);
+@include set-borders("bottom", 1px , solid , colors.$bluegrey_medium, 0);
+
+// Case specific variants
+@include set-borders("bottom", 8px , solid , colors.$bluegrey_light, 0);
