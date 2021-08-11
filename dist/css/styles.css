@@ -145,7 +145,7 @@ Spacing mixins and definitions
 Author: Nicholas Fazzolari 
 */
 .nf-margin-main-top {
-  margin-left: 0;
+  margin-left: 8rem;
   margin-top: 4rem;
   margin-right: 0;
   margin-bottom: 0;
@@ -159,10 +159,24 @@ Author: Nicholas Fazzolari
 }
 
 .nf-padding-main-left {
-  padding-left: 8rem;
-  padding-top: 0;
-  padding-right: 0;
-  padding-bottom: 0;
+  padding-left: 8rem !important;
+  padding-top: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.nf-padding-main-top {
+  padding-left: 8rem !important;
+  padding-top: 4rem !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.nf-padding-details-left {
+  padding-left: 4rem !important;
+  padding-top: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 /* 
@@ -195,8 +209,8 @@ Author: Nicholas Fazzolari
   border-radius: 0;
 }
 
-.nf-border-bottom-8px {
-  border-bottom: 8px solid #D6DBDF;
+.nf-border-bottom-4px {
+  border-bottom: 4px solid #D6DBDF;
   border-radius: 0;
 }
 

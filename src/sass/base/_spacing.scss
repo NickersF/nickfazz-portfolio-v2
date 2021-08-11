@@ -15,14 +15,16 @@ Author: Nicholas Fazzolari
 
 @mixin set-paddings($name, $left : 0, $top: 0, $right: 0, $bottom: 0) {
     .nf-padding-#{$name} {
-        padding-left: $left;
-        padding-top: $top;
-        padding-right: $right;
-        padding-bottom: $bottom;
+        padding-left: $left !important;
+        padding-top: $top !important;
+        padding-right: $right !important;
+        padding-bottom: $bottom !important;
     }
 }
 
-@include set-margins("main-top", 0, 4rem);
+@include set-margins("main-top", 8rem, 4rem);
 @include set-margins("section-heading", 0, 4rem, 0, 2rem);
 
 @include set-paddings("main-left", 8rem);
+@include set-paddings("main-top", 8rem, 4rem);
+@include set-paddings("details-left", 4rem);
