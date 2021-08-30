@@ -24,13 +24,13 @@ $color-names-map: (
 );
 
 @each $color-name, $color-value in $color-names-map {
-    .fe-#{$color-name}-bg {
+    .nf-#{$color-name}-bg {
         background-color: $color-value;
     }
 }
 
 @each $color-name, $color-value in $color-names-map {
-    .fe-#{$color-name}-text {
+    .nf-#{$color-name}-text {
         color: $color-value;
     }
 }
@@ -40,7 +40,7 @@ $color-names-map: (
 $base_red: #641E16;
 
 @for $step from 0 to 10 {
-    .fe-red-0#{$step} {
+    .nf-red-0#{$step} {
         background-color: lighten($base_red, $step * 8%);
     }
 }

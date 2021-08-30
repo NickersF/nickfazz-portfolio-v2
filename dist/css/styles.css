@@ -10,99 +10,99 @@ Color mixins and definitions
 ********************************************
 Author: Nicholas Fazzolari 
 */
-.fe-light-green-bg {
+.nf-light-green-bg {
   background-color: #40D29D;
 }
 
-.fe-light-blue-bg {
+.nf-light-blue-bg {
   background-color: #5DADE2;
 }
 
-.fe-light-yellow-bg {
+.nf-light-yellow-bg {
   background-color: #F7DC6F;
 }
 
-.fe-bluegray-dark-bg {
+.nf-bluegray-dark-bg {
   background-color: #1C2833;
 }
 
-.fe-bluegrey-medium-bg {
+.nf-bluegrey-medium-bg {
   background-color: #2C3E50;
 }
 
-.fe-bluegrey-light-bg {
+.nf-bluegrey-light-bg {
   background-color: #D6DBDF;
 }
 
-.fe-bluegrey-lightest-bg {
+.nf-bluegrey-lightest-bg {
   background-color: #EAECEE;
 }
 
-.fe-light-green-text {
+.nf-light-green-text {
   color: #40D29D;
 }
 
-.fe-light-blue-text {
+.nf-light-blue-text {
   color: #5DADE2;
 }
 
-.fe-light-yellow-text {
+.nf-light-yellow-text {
   color: #F7DC6F;
 }
 
-.fe-bluegray-dark-text {
+.nf-bluegray-dark-text {
   color: #1C2833;
 }
 
-.fe-bluegrey-medium-text {
+.nf-bluegrey-medium-text {
   color: #2C3E50;
 }
 
-.fe-bluegrey-light-text {
+.nf-bluegrey-light-text {
   color: #D6DBDF;
 }
 
-.fe-bluegrey-lightest-text {
+.nf-bluegrey-lightest-text {
   color: #EAECEE;
 }
 
-.fe-red-00 {
+.nf-red-00 {
   background-color: #641e16;
 }
 
-.fe-red-01 {
+.nf-red-01 {
   background-color: #85281d;
 }
 
-.fe-red-02 {
+.nf-red-02 {
   background-color: #a73225;
 }
 
-.fe-red-03 {
+.nf-red-03 {
   background-color: #c83c2c;
 }
 
-.fe-red-04 {
+.nf-red-04 {
   background-color: #d65547;
 }
 
-.fe-red-05 {
+.nf-red-05 {
   background-color: #de7468;
 }
 
-.fe-red-06 {
+.nf-red-06 {
   background-color: #e5938a;
 }
 
-.fe-red-07 {
+.nf-red-07 {
   background-color: #edb2ab;
 }
 
-.fe-red-08 {
+.nf-red-08 {
   background-color: #f4d1cd;
 }
 
-.fe-red-09 {
+.nf-red-09 {
   background-color: #fbefee;
 }
 
