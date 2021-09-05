@@ -4,6 +4,6 @@ Global TypeScript module imports
 Author: Nicholas Fazzolari 
 */
 
-import { styleGuideSetup } from "./styleguide";
+import { responsiveChanges } from "./styleguide";
 
-styleGuideSetup();
+responsiveChanges();

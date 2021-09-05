@@ -235,6 +235,12 @@ html, body {
   height: 64px;
 }
 
+.nf-header-divider {
+  background-color: #1C2833;
+  width: 100%;
+  height: 1rem;
+}
+
 /* 
 Global SASS source imports
 ********************************************

@@ -4,54 +4,16 @@ Main styleguide entry point
 Author: Nicholas Fazzolari 
 */
 
-import { buildBackgroundColorElements } from "./color_gen";
-
-const siteColorPalette = [
-    "light-green",
-    "light-blue",
-    "light-yellow",
-    "bluegray-dark",
-    "bluegrey-medium",
-    "bluegrey-light",
-    "bluegrey-lightest",
-];
-
-const openSansFontWeightValues = [
-    "light",
-    "regular-italic",
-    "regular",
-    "bold",
-    "extrabold"
-]
-
-const poppinsFontWeightValues = [
-    "regular",
-    "bold",
-    "black"
-]
-
-export function styleGuideSetup() {
-    buildBackgroundColorElements(siteColorPalette, "ColorPaletteWrapper");
-    buildTypeExampleElements(openSansFontWeightValues, "TypeExampleWrapper", "Open Sans Sample", "open-sans");
-    buildTypeExampleElements(poppinsFontWeightValues, "TypeExampleWrapper", "Poppins Sample", "poppins");
-}
-
-export function buildTypeExampleElements(fontWeightValues: Array<string>, parentEl: string, exText: string, targetFontFamily: string) {
-
-    if (targetFontFamily == "open-sans") {
-        for (let index = 0; index < fontWeightValues.length; index++) {
-            let $typeExEls = $("<div class='" + targetFontFamily + "-" + fontWeightValues[index] + "'></div>");
-            $typeExEls.text(exText);
-            $("#" + parentEl).append($typeExEls);
+export function responsiveChanges() {
+    $(window).on("resize", () => {
+        if ($("body").width() < 768) {
+            $(".container-fluid").removeClass("nf-padding-main-top nf-padding-main-left");
         }
-    }
 
-    if (targetFontFamily == "poppins") {
-        for (let index = 0; index < fontWeightValues.length; index++) {
-            let $typeExEls = $("<div class='" + targetFontFamily + "-" + fontWeightValues[index] + "'></div>");
-            $typeExEls.text(exText);
-            $("#" + parentEl).append($typeExEls);
+        if ($("body").width() > 768) {
+            $(".container-fluid").addClass("nf-padding-main-top nf-padding-main-left");
         }
-    }
-    
+
+        //console.log(bodyWidth);
+    });
 }

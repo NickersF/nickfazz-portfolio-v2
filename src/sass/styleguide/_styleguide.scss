@@ -4,9 +4,9 @@ Style guide code rules
 Author: Nicholas Fazzolari 
 */
 
-@use "../base/colors";
-@use "../base/type";
-@use "../base/border";
+@use "../base/colors" as colors;
+@use "../base/type" as type;
+@use "../base/border" as borders;
 
 html, body {
     background-color: colors.$bluegrey_lightest;
@@ -25,4 +25,9 @@ html, body {
 
 .color-demo-box {
     @include box-sizer(64px, 64px);
+}
+
+.nf-header-divider {
+    background-color: colors.$bluegrey_dark;
+    @include box-sizer(100%, 1rem )
 }
