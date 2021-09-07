@@ -225,9 +225,22 @@ html, body {
   font-family: "Open Sans", sans-serif;
 }
 
-.styleguide-logo-box {
+.sg-logo-box {
   width: 96px;
   height: 96px;
+}
+
+.sg-menu-item {
+  background-color: #1C2833;
+  color: #5DADE2;
+  padding: 1.25rem;
+  transition: 0.3s;
+}
+
+.sg-menu-item:hover {
+  background-color: #F7DC6F;
+  color: #2C3E50;
+  padding: 1.25rem;
 }
 
 .color-demo-box {

@@ -19,8 +19,21 @@ html, body {
     height: $height;
 }
 
-.styleguide-logo-box {
+.sg-logo-box {
     @include box-sizer(96px, 96px);
+}
+
+.sg-menu-item {
+    background-color: colors.$bluegrey_dark;
+    color: colors.$light_blue;
+    padding: 1.25rem;
+    transition: 0.3s;
+}
+
+.sg-menu-item:hover {
+    background-color: colors.$light_yellow;
+    color: colors.$bluegrey_medium;
+    padding: 1.25rem;
 }
 
 .color-demo-box {

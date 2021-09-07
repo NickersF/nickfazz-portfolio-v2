@@ -4,6 +4,9 @@ Global TypeScript module imports
 Author: Nicholas Fazzolari 
 */
 
-import { responsiveChanges } from "./styleguide";
+import { StyleGuideContoller } from "./styleguide";
 
-responsiveChanges();
+let sgcInstance = new StyleGuideContoller();
+
+sgcInstance.SetResponsiveMainPaddings();
+sgcInstance.SetMainRowHeight();

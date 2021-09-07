@@ -15,9 +15,9 @@
 
 <body>
     <div class="container-fluid nf-padding-main-top nf-padding-main-left pl-0 pr-0 h-100">
-        <div class="row no-gutters">
+        <header class="row no-gutters pb-3">
             <div class="col-auto">
-                <div class="styleguide-logo-box">
+                <div class="sg-logo-box">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                         <g id="layer_background">
                             <path id="obj_background"
@@ -36,16 +36,35 @@
                 <h1 class="poppins-black">Nicholas Fazzolari Portfolio Style Guide</h1>
                 <!-- <h1 class="poppins-black">Style Guide</h1> -->
             </div>
-        </div>
+        </header>
         <div class="row no-gutters">
             <!-- <div class="col">a</div> -->
             <div class="nf-header-divider"></div>
         </div>
-        <div class="row no-gutters">
-            <div class="col-md-3">col-3</div>
+        <main class="row no-gutters">
+            <div class="col-md-3">
+                <nav id="StyleguideNav" class="row no-gutters">
+                    <div class="col-md poppins-bold">
+                        <div class="sg-menu-item">
+                            <span>.01 COLOR</span>
+                        </div>
+                        <div class="sg-menu-item">
+                            <span>.02 TYPE</span>
+                        </div>
+                        <div class="sg-menu-item">
+                            <span>.03 BRAND</span>
+                        </div>
+                        <div class="sg-menu-item">
+                            <span>.04 METRICS</span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
             <div class="col-md-9">col-9</div>
-        </div>
-    </div>    
+        </main>
+
+    </div>
+    </div>
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="./node_modules/jquery/dist/jquery.js"></script>
