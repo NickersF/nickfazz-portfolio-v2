@@ -10,12 +10,11 @@
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./dist/css/styles.css">
-
 </head>
 
-<body>
-    <div class="container-fluid nf-padding-main-top nf-padding-main-left pl-0 pr-0 h-100">
-        <header class="row no-gutters pb-3">
+<body class="h-100">
+    <main id="MainContainer" class="container-fluid nf-padding-main-top nf-padding-main-left pl-0 pr-0 h-100">
+        <header id="HeaderContainer" class="row no-gutters pb-3">
             <div class="col-auto">
                 <div class="sg-logo-box">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
@@ -37,15 +36,18 @@
                 <!-- <h1 class="poppins-black">Style Guide</h1> -->
             </div>
         </header>
-        <div class="row no-gutters">
-            <!-- <div class="col">a</div> -->
-            <div class="nf-header-divider"></div>
-        </div>
-        <main class="row no-gutters">
-            <div class="col-md-3">
-                <nav id="StyleguideNav" class="row no-gutters">
-                    <div class="col-md poppins-bold">
-                        <div class="sg-menu-item">
+        <section id="NavAndPanelContainer" class="row no-gutters sg-content-height">
+            <div class="col-md h-100">
+                <nav id="StyleguideNav" class="row no-gutters h-100">
+                    <div class="col-md-2 nf-bluegray-dark-bg poppins-bold h-100">
+                        <div class="nf-padding-heading-box nf-border-bottom-blue-1px">
+                            <h5 class="nf-light-blue-text poppins-bold">STYLEGUIDE SECTIONS</h5>
+                            <p class="nf-light-blue-text nf-font-size-sm open-sans-light">A strong visual language is important for building an effective portfolio.
+                                The four sections below give detailed insights into the design and usage
+                                of the nickfazz.me visual brand.
+                            </p>
+                        </div>
+                        <div id="ColorMenuItem" class="sg-menu-item">
                             <span>.01 COLOR</span>
                         </div>
                         <div class="sg-menu-item">
@@ -58,13 +60,17 @@
                             <span>.04 METRICS</span>
                         </div>
                     </div>
+                    <div class="col-md-10">
+                        <div class="row no-gutters h-100">
+                            <div class="col-md">
+                                Color content panel
+                            </div>
+                        </div>
+                    </div>
                 </nav>
             </div>
-            <div class="col-md-9">col-9</div>
-        </main>
-
-    </div>
-    </div>
+        </section>
+    </main>
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="./node_modules/jquery/dist/jquery.js"></script>

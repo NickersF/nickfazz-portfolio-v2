@@ -6,10 +6,19 @@ Author: Nicholas Fazzolari
 
 export class StyleGuideContoller {
 
-    // Set main row height
-    SetMainRowHeight() {
-        let mainRowSiblings = $("main").siblings();
-        console.log(mainRowSiblings);
+    // Containers
+    mainContainer = $("#MainContainer");
+    headerContainer = $("#HeaderContainer");
+    navAndPanelContainer = $("#NavAndPanelContainer");
+
+    // Menu items
+    colorMenuItem = $("#ColorMenuItem");
+
+    // Handles click regions and content loading from menu items
+    menuEvents() {
+        this.colorMenuItem.on("click", () => {
+            console.log("clicked")
+        })
     }
 
     // Removes paddings for mobile devices

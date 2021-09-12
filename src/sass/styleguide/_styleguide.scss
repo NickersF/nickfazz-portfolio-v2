@@ -19,6 +19,15 @@ html, body {
     height: $height;
 }
 
+.sg-content-height {
+    height: calc(100% - 112px);
+}
+
+.dotted-bg {
+    opacity: .25;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZJREFUeNpi2r9//38gYGAEESAAEGAAasgJOgzOKCoAAAAASUVORK5CYII=);
+}
+
 .sg-logo-box {
     @include box-sizer(96px, 96px);
 }
@@ -36,11 +45,7 @@ html, body {
     padding: 1.25rem;
 }
 
-.color-demo-box {
-    @include box-sizer(64px, 64px);
-}
-
-.nf-header-divider {
+.sg-header-divider {
     background-color: colors.$bluegrey_dark;
     @include box-sizer(100%, 1rem )
 }
