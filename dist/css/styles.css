@@ -257,11 +257,6 @@ html, body {
   height: calc(100% - 112px);
 }
 
-.dotted-bg {
-  opacity: 0.25;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZJREFUeNpi2r9//38gYGAEESAAEGAAasgJOgzOKCoAAAAASUVORK5CYII=);
-}
-
 .sg-logo-box {
   width: 96px;
   height: 96px;
@@ -280,10 +275,73 @@ html, body {
   padding: 1.25rem;
 }
 
-.sg-header-divider {
-  background-color: #1C2833;
+@keyframes openPanel {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes closePanel {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+@keyframes fadeInPanelContent {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@keyframes fadeOutPanelContent {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+.sg-open-content-initial {
+  width: 0%;
+  height: 100%;
+}
+
+.sg-open-content {
+  width: 0%;
+  animation-name: openPanel;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.sg-close-content {
   width: 100%;
-  height: 1rem;
+  animation-name: closePanel;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.sg-display-content-initial {
+  opacity: 0%;
+}
+
+.sg-display-content {
+  opacity: 0%;
+  animation-name: fadeInPanelContent;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+}
+
+.sg-hide-content {
+  opacity: 100%;
+  animation-name: fadeOutPanelContent;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
 }
 
 /* 

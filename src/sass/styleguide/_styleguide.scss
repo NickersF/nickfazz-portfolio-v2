@@ -23,11 +23,6 @@ html, body {
     height: calc(100% - 112px);
 }
 
-.dotted-bg {
-    opacity: .25;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZJREFUeNpi2r9//38gYGAEESAAEGAAasgJOgzOKCoAAAAASUVORK5CYII=);
-}
-
 .sg-logo-box {
     @include box-sizer(96px, 96px);
 }
@@ -45,7 +40,83 @@ html, body {
     padding: 1.25rem;
 }
 
-.sg-header-divider {
-    background-color: colors.$bluegrey_dark;
-    @include box-sizer(100%, 1rem )
+// Open/close content panel animations
+@keyframes openPanel {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes closePanel {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0%;
+    }
+}
+
+// Fade in/out content animations
+@keyframes fadeInPanelContent {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
+@keyframes fadeOutPanelContent {
+    from {
+        opacity: 100%;
+    }
+
+    to {
+        opacity: 0%;
+    }
+}
+
+// Open/close animation classes
+.sg-open-content-initial {
+    width: 0%;
+    height: 100%;
+}
+
+.sg-open-content {
+    width: 0%;
+    animation-name: openPanel;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+.sg-close-content {
+    width: 100%;
+    animation-name: closePanel;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+// Fade in/out animation classes
+.sg-display-content-initial {
+    opacity: 0%;
+}
+
+.sg-display-content {
+    opacity: 0%;
+    animation-name: fadeInPanelContent;
+    animation-duration: .75s;
+    animation-fill-mode: forwards;
+}
+
+.sg-hide-content {
+    opacity: 100%;
+    animation-name: fadeOutPanelContent;
+    animation-duration: .75s;
+    animation-fill-mode: forwards;
 }
