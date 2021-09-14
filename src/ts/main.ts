@@ -4,6 +4,9 @@ Global TypeScript module imports
 Author: Nicholas Fazzolari 
 */
 
-import { styleGuideSetup } from "./styleguide";
+import { StyleGuideContoller } from "./styleguide";
 
-styleGuideSetup();
+let sgcInstance = new StyleGuideContoller();
+
+sgcInstance.SetResponsiveMainPaddings();
+sgcInstance.loadMenuEvents();

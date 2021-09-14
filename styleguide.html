@@ -10,14 +10,13 @@
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./dist/css/styles.css">
-
 </head>
 
-<body>
-    <div class="container-fluid d-flex flex-lg-column nf-padding-main-top nf-padding-main-left pr-0 h-100">
-        <div class="row no-gutters">
-            <div class="col-md-auto">
-                <div class="styleguide-logo-box">
+<body class="h-100">
+    <main id="MainContainer" class="container-fluid nf-padding-main-top nf-padding-main-left pl-0 pr-0 h-100">
+        <header id="HeaderContainer" class="row no-gutters pb-3">
+            <div class="col-auto">
+                <div class="sg-logo-box">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                         <g id="layer_background">
                             <path id="obj_background"
@@ -32,12 +31,48 @@
                     </svg>
                 </div>
             </div>
-            <div class="col-md-6 ml-4">
-                <h1 class="poppins-black">Nicholas Fazzolari Portfolio</h1>
-                <h1 class="poppins-black">Style Guide</h1>
+            <div class="col ml-4">
+                <h1 class="poppins-black">Nicholas Fazzolari Portfolio Style Guide</h1>
+                <!-- <h1 class="poppins-black">Style Guide</h1> -->
             </div>
-        </div>
-    </div>
+        </header>
+        <section id="NavAndPanelContainer" class="row no-gutters sg-content-height">
+            <div class="col-md h-100">
+                <nav id="StyleguideNav" class="row no-gutters h-100">
+                    <div class="col-md-2 nf-bluegray-dark-bg poppins-bold h-100">
+                        <div class="nf-padding-heading-box nf-border-bottom-blue-1px">
+                            <h5 class="nf-light-blue-text poppins-bold">STYLEGUIDE SECTIONS</h5>
+                            <p class="nf-light-blue-text nf-font-size-sm open-sans-light">A strong visual language is important for building an effective portfolio.
+                                The four sections below give detailed insights into the design and usage
+                                of the nickfazz.me visual brand.
+                            </p>
+                        </div>
+                        <div id="ColorMenuItem" class="sg-menu-item">
+                            <span>.01 COLOR</span>
+                        </div>
+                        <div id="TypeMenuItem" class="sg-menu-item">
+                            <span>.02 TYPE</span>
+                        </div>
+                        <div id="BrandMenuItem" class="sg-menu-item">
+                            <span>.03 BRAND</span>
+                        </div>
+                        <div id="MetricsMenuItem" class="sg-menu-item">
+                            <span>.04 METRICS</span>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="row no-gutters h-100">
+                            <div class="col-md">
+                                <div id="ContentPanel" class="nf-bluegrey-light-bg sg-open-content-initial">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </section>
+    </main>
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="./node_modules/jquery/dist/jquery.js"></script>

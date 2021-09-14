@@ -4,9 +4,9 @@ Style guide code rules
 Author: Nicholas Fazzolari 
 */
 
-@use "../base/colors";
-@use "../base/type";
-@use "../base/border";
+@use "../base/colors" as colors;
+@use "../base/type" as type;
+@use "../base/border" as borders;
 
 html, body {
     background-color: colors.$bluegrey_lightest;
@@ -19,10 +19,104 @@ html, body {
     height: $height;
 }
 
-.styleguide-logo-box {
+.sg-content-height {
+    height: calc(100% - 112px);
+}
+
+.sg-logo-box {
     @include box-sizer(96px, 96px);
 }
 
-.color-demo-box {
-    @include box-sizer(64px, 64px);
+.sg-menu-item {
+    background-color: colors.$bluegrey_dark;
+    color: colors.$light_blue;
+    padding: 1.25rem;
+    transition: 0.3s;
+}
+
+.sg-menu-item:hover {
+    background-color: colors.$light_yellow;
+    color: colors.$bluegrey_medium;
+    padding: 1.25rem;
+}
+
+// Open/close content panel animations
+@keyframes openPanel {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes closePanel {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0%;
+    }
+}
+
+// Fade in/out content animations
+@keyframes fadeInPanelContent {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
+@keyframes fadeOutPanelContent {
+    from {
+        opacity: 100%;
+    }
+
+    to {
+        opacity: 0%;
+    }
+}
+
+// Open/close animation classes
+.sg-open-content-initial {
+    width: 0%;
+    height: 100%;
+}
+
+.sg-open-content {
+    width: 0%;
+    animation-name: openPanel;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+.sg-close-content {
+    width: 100%;
+    animation-name: closePanel;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+// Fade in/out animation classes
+.sg-display-content-initial {
+    opacity: 0%;
+}
+
+.sg-display-content {
+    opacity: 0%;
+    animation-name: fadeInPanelContent;
+    animation-duration: .75s;
+    animation-fill-mode: forwards;
+}
+
+.sg-hide-content {
+    opacity: 100%;
+    animation-name: fadeOutPanelContent;
+    animation-duration: .75s;
+    animation-fill-mode: forwards;
 }
