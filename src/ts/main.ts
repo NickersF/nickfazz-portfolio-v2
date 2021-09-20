@@ -8,5 +8,4 @@ import { StyleGuideContoller } from "./styleguide";
 
 let sgcInstance = new StyleGuideContoller();
 
-sgcInstance.SetResponsiveMainPaddings();
-sgcInstance.loadMenuEvents();
+sgcInstance.toggleContentPanel();

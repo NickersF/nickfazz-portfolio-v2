@@ -11,6 +11,7 @@ export class StyleGuideContoller {
     headerContainerEl = $("#HeaderContainer");
     navAndPanelContainerEl = $("#NavAndPanelContainer");
     contentPanelEl = $("#ContentPanel");
+    contentPanelElB = $("#ContentPanelB");
 
     // Menu items
     colorMenuItemEl = $("#ColorMenuItem");
@@ -19,66 +20,51 @@ export class StyleGuideContoller {
     metricsMenuItemEl = $("#MetricsMenuItem");
 
     isContentPanelOpen = false;
-    
-    // Use this on the instance to bind the events
-    loadMenuEvents() {
-        this.toggleContentPanelEvent(this.colorMenuItemEl, this.contentPanelEl, this.isContentPanelOpen);
-    }
 
-    // Controls animations
-    toggleContentPanelEvent(menuItem: JQuery<HTMLElement>, contentPanel: JQuery<HTMLElement>, isContentPanelOpen: boolean) {
+    toggleContentPanel() {
+        let self = this;
+        this.colorMenuItemEl.on("click", function() {
+            self.setContentPanelVisibility(self);
+        });
 
-        menuItem.on("click", () => {
+        this.typeMenuItemEl.on("click", function() {
+            self.setContentPanelVisibility(self);
+        });
 
-            if (isContentPanelOpen == false) {
-                contentPanel.addClass("sg-open-content");
-                contentPanel.removeClass("sg-close-content");
+        this.brandMenuItemEl.on("click", function() {
+            self.setContentPanelVisibility(self);
+        });
 
-                contentPanel.on("animationend", () => {
-                    isContentPanelOpen = true;
-                    console.log(isContentPanelOpen);
-                });
-            }
-
-            if (isContentPanelOpen == true) {
-                contentPanel.addClass("sg-close-content");
-                contentPanel.removeClass("sg-open-content");
-
-                contentPanel.on("animationend", () => {
-                    isContentPanelOpen = false;
-                    console.log(isContentPanelOpen);
-                });
-            }
-
+        this.metricsMenuItemEl.on("click", function() {
+            self.setContentPanelVisibility(self);
         });
     }
 
-    // toggleContentPanelEvent() {
-    //     let animComplete = false;
-    //     this.colorMenuItemEl.on("click", () => {
+    setContentPanelVisibility(self) {
+        if (self.isContentPanelOpen == false) {
+            self.contentPanelEl.addClass("sg-open-content");
+            self.contentPanelEl.removeClass("sg-close-content d-none");
 
-    //         if (animComplete == false) {
-    //             this.contentPanelEl.addClass("sg-open-content");
-    //             this.contentPanelEl.removeClass("sg-close-content");
+            self.contentPanelEl.on("animationend", () => {
+                self.isContentPanelOpen = true;
+                self.contentPanelElB.addClass("d-none");
+                self.contentPanelEl.removeClass("d-none").addClass("sg-open-content");
+            });
+            
+        }
 
-    //             this.contentPanelEl.on("animationend", () => {
-    //                 animComplete = true;
-    //                 console.log(animComplete);
-    //             });
-    //         }
+        if (self.isContentPanelOpen == true) {
+            self.contentPanelEl.addClass("sg-close-content");
+            self.contentPanelEl.removeClass("sg-open-content");
 
-    //         if (animComplete == true) {
-    //             this.contentPanelEl.addClass("sg-close-content");
-    //             this.contentPanelEl.removeClass("sg-open-content");
-
-    //             this.contentPanelEl.on("animationend", () => {
-    //                 animComplete = false;
-    //                 console.log(animComplete);
-    //             });
-    //         }
-
-    //     });
-    // }
+            self.contentPanelEl.on("animationend", () => {
+                self.isContentPanelOpen = false;
+                console.log("animation ended");
+                self.contentPanelEl.addClass("d-none").removeClass("sg-close-content sg-open-content");
+                self.contentPanelElB.removeClass("d-none").addClass("sg-open-content");
+            });
+        }
+    }
 
     // Removes paddings for mobile devices
     SetResponsiveMainPaddings() {
