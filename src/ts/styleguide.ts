@@ -6,11 +6,10 @@ Author: Nicholas Fazzolari
 
 export class StyleGuideContoller {
 
-    // Containers
+    // Main containers
     mainContainerEl = $("#MainContainer");
     headerContainerEl = $("#HeaderContainer");
     navAndPanelContainerEl = $("#NavAndPanelContainer");
-    contentPanelEl = $("#ContentPanel");
 
     // Menu items
     colorMenuItemEl = $("#ColorMenuItem");
@@ -18,67 +17,44 @@ export class StyleGuideContoller {
     brandMenuItemEl = $("#BrandMenuItem");
     metricsMenuItemEl = $("#MetricsMenuItem");
 
-    isContentPanelOpen = false;
-    
-    // Use this on the instance to bind the events
-    loadMenuEvents() {
-        this.toggleContentPanelEvent(this.colorMenuItemEl, this.contentPanelEl, this.isContentPanelOpen);
+    menuItems = [this.colorMenuItemEl, this.typeMenuItemEl, this.brandMenuItemEl, this.metricsMenuItemEl];
+
+    // Content panels
+    welcomePanel  = $("#WelcomePanel");
+    colorPanel = $("#ColorPanel");
+    typePanel = $("#TypePanel");
+    brandPanel = $("#BrandPanel");
+    metricsPanel = $("#MetricsPanel");
+
+    contentPanels = [this.welcomePanel, this.colorPanel, this.typePanel, this.brandPanel, this.metricsPanel];
+
+    init() {
+        console.log(this.menuItems);
+        this.colorMenuItemEl.data("fornav", "YOOF");
+        for (let index = 0; index < this.contentPanels.length; index++) {
+            if (this.contentPanels[index].attr("id") !== "WelcomePanel") {
+                this.contentPanels[index].addClass("d-none");
+            }
+        }
     }
 
-    // Controls animations
-    toggleContentPanelEvent(menuItem: JQuery<HTMLElement>, contentPanel: JQuery<HTMLElement>, isContentPanelOpen: boolean) {
+    navigationEvents() {
+        let self = this;
+        this.colorMenuItemEl.on("click", function() {
+            console.log($(this));
+            console.log($(this).attr("id"));
 
-        menuItem.on("click", () => {
+            console.log(this);
+            for (let index = 0; index < self.contentPanels.length; index++) {
+                console.log(self.contentPanels[index].attr("id"));
 
-            if (isContentPanelOpen == false) {
-                contentPanel.addClass("sg-open-content");
-                contentPanel.removeClass("sg-close-content");
-
-                contentPanel.on("animationend", () => {
-                    isContentPanelOpen = true;
-                    console.log(isContentPanelOpen);
-                });
+                if (self.contentPanels[index].attr("id") == $(this).attr("id")) {
+                    //self.contentPanels[index].addClass("d-none");
+                    console.log(self.contentPanels[index].attr("id"));
+                }
             }
-
-            if (isContentPanelOpen == true) {
-                contentPanel.addClass("sg-close-content");
-                contentPanel.removeClass("sg-open-content");
-
-                contentPanel.on("animationend", () => {
-                    isContentPanelOpen = false;
-                    console.log(isContentPanelOpen);
-                });
-            }
-
         });
     }
-
-    // toggleContentPanelEvent() {
-    //     let animComplete = false;
-    //     this.colorMenuItemEl.on("click", () => {
-
-    //         if (animComplete == false) {
-    //             this.contentPanelEl.addClass("sg-open-content");
-    //             this.contentPanelEl.removeClass("sg-close-content");
-
-    //             this.contentPanelEl.on("animationend", () => {
-    //                 animComplete = true;
-    //                 console.log(animComplete);
-    //             });
-    //         }
-
-    //         if (animComplete == true) {
-    //             this.contentPanelEl.addClass("sg-close-content");
-    //             this.contentPanelEl.removeClass("sg-open-content");
-
-    //             this.contentPanelEl.on("animationend", () => {
-    //                 animComplete = false;
-    //                 console.log(animComplete);
-    //             });
-    //         }
-
-    //     });
-    // }
 
     // Removes paddings for mobile devices
     SetResponsiveMainPaddings() {

@@ -38,8 +38,8 @@
         </header>
         <section id="NavAndPanelContainer" class="row no-gutters sg-content-height">
             <div class="col-md h-100">
-                <nav id="StyleguideNav" class="row no-gutters h-100">
-                    <div class="col-md-2 nf-bluegray-dark-bg poppins-bold h-100">
+                <div class="row no-gutters h-100">
+                    <nav id="StyleguideNav" class="col-md-2 nf-bluegray-dark-bg poppins-bold h-100">
                         <div class="nf-padding-heading-box nf-border-bottom-blue-1px">
                             <h5 class="nf-light-blue-text poppins-bold">STYLEGUIDE SECTIONS</h5>
                             <p class="nf-light-blue-text nf-font-size-sm open-sans-light">A strong visual language is important for building an effective portfolio.
@@ -47,7 +47,7 @@
                                 of the nickfazz.me visual brand.
                             </p>
                         </div>
-                        <div id="ColorMenuItem" class="sg-menu-item">
+                        <div id="ColorMenuItem" data-fornav="0" class="sg-menu-item">
                             <span>.01 COLOR</span>
                         </div>
                         <div id="TypeMenuItem" class="sg-menu-item">
@@ -59,17 +59,17 @@
                         <div id="MetricsMenuItem" class="sg-menu-item">
                             <span>.04 METRICS</span>
                         </div>
-                    </div>
+                    </nav>
                     <div class="col-md-10">
                         <div class="row no-gutters h-100">
-                            <div class="col-md">
-                                <div id="ContentPanel" class="nf-bluegrey-light-bg sg-open-content-initial">
-                                    
-                                </div>
-                            </div>
+                            <div id="WelcomePanel" class="col-md">Welcome</div>
+                            <div id="ColorPanel" class="col-md">Color</div>
+                            <div id="TypePanel" class="col-md">Type</div>
+                            <div id="BrandPanel" class="col-md">Brand</div>
+                            <div id="MetricsPanel" class="col-md">Metrics</div>
                         </div>
                     </div>
-                </nav>
+                </div>
             </div>
         </section>
     </main>
