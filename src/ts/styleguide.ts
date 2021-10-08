@@ -28,29 +28,79 @@ export class StyleGuideContoller {
 
     contentPanels = [this.welcomePanel, this.colorPanel, this.typePanel, this.brandPanel, this.metricsPanel];
 
+    // Content containers
+    welcomeContent = $("#WelcomeContent");
+    colorContent = $("#ColorContent");
+    typeContent = $("#TypeContent");
+    brandContent = $("#BrandContent");
+    metricsContent = $("#MetricsContent");
+
+    contentContainers = [this.welcomeContent, this.colorContent, this.typeContent, this.brandContent, this.metricsContent];
+
     init() {
-        console.log(this.menuItems);
-        this.colorMenuItemEl.data("fornav", "YOOF");
-        for (let index = 0; index < this.contentPanels.length; index++) {
-            if (this.contentPanels[index].attr("id") !== "WelcomePanel") {
-                this.contentPanels[index].addClass("d-none");
+        for (let panel = 0; panel < this.contentPanels.length; panel++) {
+            if (this.contentPanels[panel].attr("id") == "WelcomePanel") {
+                this.contentPanels[panel].attr("data-active-panel", "true");
+            }
+            if (this.contentPanels[panel].attr("id") !== "WelcomePanel") {
+                this.contentPanels[panel].attr("data-active-panel", "false");
+                this.contentPanels[panel].addClass("d-none");
             }
         }
     }
 
     navigationEvents() {
         let self = this;
+
         this.colorMenuItemEl.on("click", function() {
-            console.log($(this));
-            console.log($(this).attr("id"));
+            for (let panel = 0; panel < self.contentPanels.length; panel++) {
+                if (self.contentPanels[panel].attr("id") == self.colorPanel.attr("id")) {
+                    self.contentPanels[panel].removeClass("d-none");
+                    self.colorContent.addClass("sg-open-content");
+                }
+                if (self.contentPanels[panel].attr("id") !== self.colorPanel.attr("id")) {
+                    self.contentPanels[panel].addClass("d-none");
+                    self.contentContainers[panel].removeClass("sg-open-content");
+                }
+            }
+        });
 
-            console.log(this);
-            for (let index = 0; index < self.contentPanels.length; index++) {
-                console.log(self.contentPanels[index].attr("id"));
+        this.typeMenuItemEl.on("click", function() {
+            for (let panel = 0; panel < self.contentPanels.length; panel++) {
+                if (self.contentPanels[panel].attr("id") == self.typePanel.attr("id")) {
+                    self.contentPanels[panel].removeClass("d-none");
+                    self.typeContent.addClass("sg-open-content");
+                }
+                if (self.contentPanels[panel].attr("id") !== self.typePanel.attr("id")) {
+                    self.contentPanels[panel].addClass("d-none");
+                    self.contentContainers[panel].removeClass("sg-open-content");
+                }
+            }
+        });
 
-                if (self.contentPanels[index].attr("id") == $(this).attr("id")) {
-                    //self.contentPanels[index].addClass("d-none");
-                    console.log(self.contentPanels[index].attr("id"));
+        this.brandMenuItemEl.on("click", function() {
+            for (let panel = 0; panel < self.contentPanels.length; panel++) {
+                if (self.contentPanels[panel].attr("id") == self.brandPanel.attr("id")) {
+                    self.contentPanels[panel].removeClass("d-none");
+                    self.brandContent.addClass("sg-open-content");
+                }
+                if (self.contentPanels[panel].attr("id") !== self.brandPanel.attr("id")) {
+                    self.contentPanels[panel].addClass("d-none");
+                    self.contentContainers[panel].removeClass("sg-open-content");
+
+                }
+            }
+        });
+
+        this.metricsMenuItemEl.on("click", function() {
+            for (let panel = 0; panel < self.contentPanels.length; panel++) {
+                if (self.contentPanels[panel].attr("id") == self.metricsPanel.attr("id")) {
+                    self.contentPanels[panel].removeClass("d-none");
+                    self.metricsContent.addClass("sg-open-content");
+                }
+                if (self.contentPanels[panel].attr("id") !== self.metricsPanel.attr("id")) {
+                    self.contentPanels[panel].addClass("d-none");
+                    self.contentContainers[panel].removeClass("sg-open-content");
                 }
             }
         });
