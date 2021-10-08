@@ -55,12 +55,10 @@ export class StyleGuideContoller {
         this.colorMenuItemEl.on("click", function() {
             for (let panel = 0; panel < self.contentPanels.length; panel++) {
                 if (self.contentPanels[panel].attr("id") == self.colorPanel.attr("id")) {
-                    //self.contentContainers[panel].removeClass("sg-close-content");
                     self.contentPanels[panel].removeClass("d-none");
                     self.colorContent.addClass("sg-open-content");
                 }
                 if (self.contentPanels[panel].attr("id") !== self.colorPanel.attr("id")) {
-                    //self.contentContainers[panel].addClass("sg-close-content");
                     self.contentPanels[panel].addClass("d-none");
                     self.contentContainers[panel].removeClass("sg-open-content");
                 }
@@ -70,12 +68,10 @@ export class StyleGuideContoller {
         this.typeMenuItemEl.on("click", function() {
             for (let panel = 0; panel < self.contentPanels.length; panel++) {
                 if (self.contentPanels[panel].attr("id") == self.typePanel.attr("id")) {
-                    //self.contentContainers[panel].removeClass("sg-close-content");
                     self.contentPanels[panel].removeClass("d-none");
                     self.typeContent.addClass("sg-open-content");
                 }
                 if (self.contentPanels[panel].attr("id") !== self.typePanel.attr("id")) {
-                    //self.contentContainers[panel].addClass("sg-close-content");
                     self.contentPanels[panel].addClass("d-none");
                     self.contentContainers[panel].removeClass("sg-open-content");
                 }
@@ -85,12 +81,10 @@ export class StyleGuideContoller {
         this.brandMenuItemEl.on("click", function() {
             for (let panel = 0; panel < self.contentPanels.length; panel++) {
                 if (self.contentPanels[panel].attr("id") == self.brandPanel.attr("id")) {
-                    //self.contentContainers[panel].removeClass("sg-close-content");
                     self.contentPanels[panel].removeClass("d-none");
                     self.brandContent.addClass("sg-open-content");
                 }
                 if (self.contentPanels[panel].attr("id") !== self.brandPanel.attr("id")) {
-                    //self.contentContainers[panel].addClass("sg-close-content");
                     self.contentPanels[panel].addClass("d-none");
                     self.contentContainers[panel].removeClass("sg-open-content");
 
@@ -101,12 +95,10 @@ export class StyleGuideContoller {
         this.metricsMenuItemEl.on("click", function() {
             for (let panel = 0; panel < self.contentPanels.length; panel++) {
                 if (self.contentPanels[panel].attr("id") == self.metricsPanel.attr("id")) {
-                    //self.contentContainers[panel].removeClass("sg-close-content");
                     self.contentPanels[panel].removeClass("d-none");
                     self.metricsContent.addClass("sg-open-content");
                 }
                 if (self.contentPanels[panel].attr("id") !== self.metricsPanel.attr("id")) {
-                    //self.contentContainers[panel].addClass("sg-close-content");
                     self.contentPanels[panel].addClass("d-none");
                     self.contentContainers[panel].removeClass("sg-open-content");
                 }
