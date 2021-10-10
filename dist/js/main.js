@@ -29,10 +29,13 @@ class StyleGuideContoller {
         this.contentPanels = [this.welcomePanel, this.colorPanel, this.typePanel, this.brandPanel, this.metricsPanel];
         this.welcomeContent = $("#WelcomeContent");
         this.colorContent = $("#ColorContent");
-        this.colorFadeWrapper = $("#ColorFadeWrapper");
         this.typeContent = $("#TypeContent");
         this.brandContent = $("#BrandContent");
         this.metricsContent = $("#MetricsContent");
+        this.colorFadeWrapper = $("#ColorFadeWrapper");
+        this.typeFadeWrapper = $("#TypeFadeWrapper");
+        this.brandFadeWrapper = $("#BrandFadeWrapper");
+        this.metricsFadeWrapper = $("#MetricsFadeWrapper");
         this.contentContainers = [this.welcomeContent, this.colorContent, this.typeContent, this.brandContent, this.metricsContent];
     }
     init() {
@@ -65,6 +68,7 @@ class StyleGuideContoller {
             for (let panel = 0; panel < self.contentPanels.length; panel++) {
                 if (self.contentPanels[panel].attr("id") == self.typePanel.attr("id")) {
                     self.contentPanels[panel].removeClass("d-none");
+                    self.typeFadeWrapper.addClass("sg-display-content");
                     self.typeContent.addClass("sg-open-content");
                 }
                 if (self.contentPanels[panel].attr("id") !== self.typePanel.attr("id")) {
@@ -77,6 +81,7 @@ class StyleGuideContoller {
             for (let panel = 0; panel < self.contentPanels.length; panel++) {
                 if (self.contentPanels[panel].attr("id") == self.brandPanel.attr("id")) {
                     self.contentPanels[panel].removeClass("d-none");
+                    self.brandFadeWrapper.addClass("sg-display-content");
                     self.brandContent.addClass("sg-open-content");
                 }
                 if (self.contentPanels[panel].attr("id") !== self.brandPanel.attr("id")) {
@@ -89,6 +94,7 @@ class StyleGuideContoller {
             for (let panel = 0; panel < self.contentPanels.length; panel++) {
                 if (self.contentPanels[panel].attr("id") == self.metricsPanel.attr("id")) {
                     self.contentPanels[panel].removeClass("d-none");
+                    self.metricsFadeWrapper.addClass("sg-display-content");
                     self.metricsContent.addClass("sg-open-content");
                 }
                 if (self.contentPanels[panel].attr("id") !== self.metricsPanel.attr("id")) {
