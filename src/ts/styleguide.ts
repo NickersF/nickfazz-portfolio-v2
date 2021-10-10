@@ -31,6 +31,7 @@ export class StyleGuideContoller {
     // Content containers
     welcomeContent = $("#WelcomeContent");
     colorContent = $("#ColorContent");
+    colorFadeWrapper = $("#ColorFadeWrapper");
     typeContent = $("#TypeContent");
     brandContent = $("#BrandContent");
     metricsContent = $("#MetricsContent");
@@ -56,6 +57,7 @@ export class StyleGuideContoller {
             for (let panel = 0; panel < self.contentPanels.length; panel++) {
                 if (self.contentPanels[panel].attr("id") == self.colorPanel.attr("id")) {
                     self.contentPanels[panel].removeClass("d-none");
+                    self.colorFadeWrapper.addClass("sg-display-content");
                     self.colorContent.addClass("sg-open-content");
                 }
                 if (self.contentPanels[panel].attr("id") !== self.colorPanel.attr("id")) {

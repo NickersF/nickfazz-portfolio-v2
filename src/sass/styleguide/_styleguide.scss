@@ -109,6 +109,7 @@ html, body {
 
 .sg-display-content {
     opacity: 0%;
+    animation-delay: 1.5s;
     animation-name: fadeInPanelContent;
     animation-duration: .75s;
     animation-fill-mode: forwards;
