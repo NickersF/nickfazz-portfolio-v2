@@ -29,6 +29,7 @@ class StyleGuideContoller {
         this.contentPanels = [this.welcomePanel, this.colorPanel, this.typePanel, this.brandPanel, this.metricsPanel];
         this.welcomeContent = $("#WelcomeContent");
         this.colorContent = $("#ColorContent");
+        this.colorFadeWrapper = $("#ColorFadeWrapper");
         this.typeContent = $("#TypeContent");
         this.brandContent = $("#BrandContent");
         this.metricsContent = $("#MetricsContent");
@@ -51,6 +52,7 @@ class StyleGuideContoller {
             for (let panel = 0; panel < self.contentPanels.length; panel++) {
                 if (self.contentPanels[panel].attr("id") == self.colorPanel.attr("id")) {
                     self.contentPanels[panel].removeClass("d-none");
+                    self.colorFadeWrapper.addClass("sg-display-content");
                     self.colorContent.addClass("sg-open-content");
                 }
                 if (self.contentPanels[panel].attr("id") !== self.colorPanel.attr("id")) {
