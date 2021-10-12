@@ -22,6 +22,11 @@ Author: Nicholas Fazzolari
     }
 }
 
+@mixin box-sizer($width, $height) {
+    width: $width;
+    height: $height;
+}
+
 @include set-margins("main-top", 8rem, 4rem);
 @include set-margins("section-heading", 0, 4rem, 0, 2rem);
 
