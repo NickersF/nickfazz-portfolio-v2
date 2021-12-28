@@ -4,11 +4,9 @@ Global TypeScript module imports
 Author: Nicholas Fazzolari 
 */
 
-// import { StyleGuideContoller } from "./styleguide";
+import { StyleGuideContoller } from "./styleguide";
 
-// let sgcInstance = new StyleGuideContoller();
+let sgcInstance = new StyleGuideContoller();
 
-// sgcInstance.init();
-// sgcInstance.navigationEvents();
-
-import "./controllers";
+sgcInstance.init();
+sgcInstance.navigationEvents();
