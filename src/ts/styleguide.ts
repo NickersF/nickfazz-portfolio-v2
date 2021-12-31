@@ -95,7 +95,6 @@ export class StyleGuideContoller {
                 if (self.contentPanels[panel].attr("id") !== self.brandPanel.attr("id")) {
                     self.contentPanels[panel].addClass("d-none");
                     self.contentContainers[panel].removeClass("sg-open-content");
-
                 }
             }
         });
