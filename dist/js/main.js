@@ -2,81 +2,120 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./controllers/index.ts":
-/*!******************************!*\
-  !*** ./controllers/index.ts ***!
-  \******************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-__exportStar(__webpack_require__(/*! ./styleguide/styleguide.exports */ "./controllers/styleguide/styleguide.exports.ts"), exports);
-
-
-/***/ }),
-
-/***/ "./controllers/styleguide/styleguide.controller.ts":
-/*!*********************************************************!*\
-  !*** ./controllers/styleguide/styleguide.controller.ts ***!
-  \*********************************************************/
+/***/ "./styleguide.ts":
+/*!***********************!*\
+  !*** ./styleguide.ts ***!
+  \***********************/
 /***/ ((__unused_webpack_module, exports) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-class StyleguideController {
-    static getInstance() {
-        if (!this.privInstance) {
-            this.privInstance = new StyleguideController;
-        }
-        return this.privInstance;
+exports.StyleGuideContoller = void 0;
+class StyleGuideContoller {
+    constructor() {
+        this.mainContainerEl = $("#MainContainer");
+        this.headerContainerEl = $("#HeaderContainer");
+        this.navAndPanelContainerEl = $("#NavAndPanelContainer");
+        this.colorMenuItemEl = $("#ColorMenuItem");
+        this.typeMenuItemEl = $("#TypeMenuItem");
+        this.brandMenuItemEl = $("#BrandMenuItem");
+        this.metricsMenuItemEl = $("#MetricsMenuItem");
+        this.menuItems = [this.colorMenuItemEl, this.typeMenuItemEl, this.brandMenuItemEl, this.metricsMenuItemEl];
+        this.welcomePanel = $("#WelcomePanel");
+        this.colorPanel = $("#ColorPanel");
+        this.typePanel = $("#TypePanel");
+        this.brandPanel = $("#BrandPanel");
+        this.metricsPanel = $("#MetricsPanel");
+        this.contentPanels = [this.welcomePanel, this.colorPanel, this.typePanel, this.brandPanel, this.metricsPanel];
+        this.welcomeContent = $("#WelcomeContent");
+        this.colorContent = $("#ColorContent");
+        this.typeContent = $("#TypeContent");
+        this.brandContent = $("#BrandContent");
+        this.metricsContent = $("#MetricsContent");
+        this.colorFadeWrapper = $("#ColorFadeWrapper");
+        this.typeFadeWrapper = $("#TypeFadeWrapper");
+        this.brandFadeWrapper = $("#BrandFadeWrapper");
+        this.metricsFadeWrapper = $("#MetricsFadeWrapper");
+        this.contentContainers = [this.welcomeContent, this.colorContent, this.typeContent, this.brandContent, this.metricsContent];
     }
-    mainEvents() {
-        console.log("SupportTicketController module loaded.");
+    init() {
+        for (let panel = 0; panel < this.contentPanels.length; panel++) {
+            if (this.contentPanels[panel].attr("id") == "WelcomePanel") {
+                this.contentPanels[panel].attr("data-active-panel", "true");
+            }
+            if (this.contentPanels[panel].attr("id") !== "WelcomePanel") {
+                this.contentPanels[panel].attr("data-active-panel", "false");
+                this.contentPanels[panel].addClass("d-none");
+            }
+        }
+    }
+    navigationEvents() {
+        let self = this;
+        this.colorMenuItemEl.on("click", function () {
+            for (let panel = 0; panel < self.contentPanels.length; panel++) {
+                if (self.contentPanels[panel].attr("id") == self.colorPanel.attr("id")) {
+                    self.contentPanels[panel].removeClass("d-none");
+                    self.colorFadeWrapper.addClass("sg-display-content");
+                    self.colorContent.addClass("sg-open-content");
+                }
+                if (self.contentPanels[panel].attr("id") !== self.colorPanel.attr("id")) {
+                    self.contentPanels[panel].addClass("d-none");
+                    self.contentContainers[panel].removeClass("sg-open-content");
+                }
+            }
+        });
+        this.typeMenuItemEl.on("click", function () {
+            for (let panel = 0; panel < self.contentPanels.length; panel++) {
+                if (self.contentPanels[panel].attr("id") == self.typePanel.attr("id")) {
+                    self.contentPanels[panel].removeClass("d-none");
+                    self.typeFadeWrapper.addClass("sg-display-content");
+                    self.typeContent.addClass("sg-open-content");
+                }
+                if (self.contentPanels[panel].attr("id") !== self.typePanel.attr("id")) {
+                    self.contentPanels[panel].addClass("d-none");
+                    self.contentContainers[panel].removeClass("sg-open-content");
+                }
+            }
+        });
+        this.brandMenuItemEl.on("click", function () {
+            for (let panel = 0; panel < self.contentPanels.length; panel++) {
+                if (self.contentPanels[panel].attr("id") == self.brandPanel.attr("id")) {
+                    self.contentPanels[panel].removeClass("d-none");
+                    self.brandFadeWrapper.addClass("sg-display-content");
+                    self.brandContent.addClass("sg-open-content");
+                }
+                if (self.contentPanels[panel].attr("id") !== self.brandPanel.attr("id")) {
+                    self.contentPanels[panel].addClass("d-none");
+                    self.contentContainers[panel].removeClass("sg-open-content");
+                }
+            }
+        });
+        this.metricsMenuItemEl.on("click", function () {
+            for (let panel = 0; panel < self.contentPanels.length; panel++) {
+                if (self.contentPanels[panel].attr("id") == self.metricsPanel.attr("id")) {
+                    self.contentPanels[panel].removeClass("d-none");
+                    self.metricsFadeWrapper.addClass("sg-display-content");
+                    self.metricsContent.addClass("sg-open-content");
+                }
+                if (self.contentPanels[panel].attr("id") !== self.metricsPanel.attr("id")) {
+                    self.contentPanels[panel].addClass("d-none");
+                    self.contentContainers[panel].removeClass("sg-open-content");
+                }
+            }
+        });
+    }
+    SetResponsiveMainPaddings() {
+        $(window).on("resize", () => {
+            if ($("body").width() < 768) {
+                $(".container-fluid").removeClass("nf-padding-main-top nf-padding-main-left");
+            }
+            if ($("body").width() > 768) {
+                $(".container-fluid").addClass("nf-padding-main-top nf-padding-main-left");
+            }
+        });
     }
 }
-exports["default"] = StyleguideController;
-$(document).ready(() => {
-    try {
-        if (STYLEGUIDE_MAIN) {
-            StyleguideController.getInstance().mainEvents();
-        }
-    }
-    catch (err) {
-    }
-});
-
-
-/***/ }),
-
-/***/ "./controllers/styleguide/styleguide.exports.ts":
-/*!******************************************************!*\
-  !*** ./controllers/styleguide/styleguide.exports.ts ***!
-  \******************************************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-__exportStar(__webpack_require__(/*! ./styleguide.controller */ "./controllers/styleguide/styleguide.controller.ts"), exports);
+exports.StyleGuideContoller = StyleGuideContoller;
 
 
 /***/ })
@@ -101,7 +140,7 @@ __exportStar(__webpack_require__(/*! ./styleguide.controller */ "./controllers/s
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -117,7 +156,10 @@ var exports = __webpack_exports__;
   \*****************/
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-__webpack_require__(/*! ./controllers */ "./controllers/index.ts");
+const styleguide_1 = __webpack_require__(/*! ./styleguide */ "./styleguide.ts");
+let sgcInstance = new styleguide_1.StyleGuideContoller();
+sgcInstance.init();
+sgcInstance.navigationEvents();
 
 })();
 
