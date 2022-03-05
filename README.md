@@ -1,5 +1,5 @@
-# Nicholas Fazzolari Portfolio Site - V2 - 2021/2022
+# Nicholas Fazzolari Portfolio Site - V2 - 2021
 
 ### Summary
 
-Source for my new portfolio website project.
+This project is deprecated - deleted after copying needed code.
